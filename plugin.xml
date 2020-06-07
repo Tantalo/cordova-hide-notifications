@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="cordova-hide-notifications"
+      version="0.1.0">
+    <name>HideNotifications</name>
+    <description>Hide Notifications</description>
+    <license>MIT</license>
+    <keywords>phonegap, cordova, android, hid, notifications</keywords>
+
+
+    <js-module src="www/HideNotifications.js" name="HideNotifications">
+        <clobbers target="window.HideNotifications" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="HideNotifications">
+                <param name="android-package" value="it.tantalo.cat.hidenotifications.HideNotificationsPlugin" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+
+            <service android:name="it.tantalo.cat.hidenotifications.HideNotificationsService"
+                      android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+                <intent-filter>
+                    <action android:name="android.service.notification.NotificationListenerService" ></action>
+                </intent-filter>
+            </service>
+
+        </config-file>
+	    
+        <source-file src="src/android/HideNotificationsPlugin.java" target-dir="src/it/tantalo/cat/hidenotification/HideNotificationsPlugin" />
+        <source-file src="src/android/HideNotificationService.java" target-dir="src/it/tantalo/cat/hidenotification/HideNotificationService" />
+     </platform>
+</plugin>
