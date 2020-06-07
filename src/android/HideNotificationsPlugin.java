@@ -23,18 +23,18 @@ public class HideNotificationsPlugin extends CordovaPlugin {
                 intent.setAction(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
                 this.cordova.getActivity().startActivity(intent);
             } else {
-                HideNotificationService.setIsEnabled(true);
+                HideNotificationsService.setIsEnabled(true);
             }
         }
 
         if (action.equalsIgnoreCase("disable")) {
-            HideNotificationService.setIsEnabled(false);
+            HideNotificationsService.setIsEnabled(false);
         }
 
-        String msg = HideNotificationService.isEnabled() + "";
+        String msg = HideNotificationsService.isEnabled() + "";
 
         if (action.equalsIgnoreCase("getStatus")) {
-            msg = HideNotificationService.getStatus();
+            msg = HideNotificationsService.getStatus();
         }
 
         PluginResult result = new PluginResult(PluginResult.Status.OK, msg);
@@ -46,7 +46,7 @@ public class HideNotificationsPlugin extends CordovaPlugin {
 
     @TargetApi(Build.VERSION_CODES.CUPCAKE)
     private boolean checkNotificationListenerPermission() {
-        ComponentName cn = new ComponentName(this.cordova.getContext(), HideNotificationService.class);
+        ComponentName cn = new ComponentName(this.cordova.getContext(), HideNotificationsService.class);
         String flat = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), "enabled_notification_listeners");
         final boolean enabled = flat != null && flat.contains(cn.flattenToString());
         return enabled;
