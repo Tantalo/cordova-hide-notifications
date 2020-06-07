@@ -1,0 +1,29 @@
+{
+  "name": "cordova-hide-notifications",
+  "version": "0.1.0",
+  "description": "Cordova Plugin to hide notifications",
+  "cordova": {
+    "id": "cordova-hide-notifications",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tantalo/cordova-hide-notifications.git"
+  },
+  "keywords": [
+    "phonegap",
+    "phone",
+    "hide",
+	  "notifications",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Tantalo Christian Alessandro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tantalo/cordova-hide-notifications/issues"
+  },
+  "homepage": "https://github.com/tantalo/cordova-hide-notifications#readme"
+}
