@@ -7,13 +7,13 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
-public class HideNotificationService extends NotificationListenerService {
+public class HideNotificationsService extends NotificationListenerService {
 
     private static boolean enabled = true;
     private static String status = "initial";
 
     public static void setIsEnabled(boolean enabled) {
-        HideNotificationService.enabled = enabled;
+        HideNotificationsService.enabled = enabled;
     }
 
     public static boolean isEnabled() {
@@ -33,8 +33,8 @@ public class HideNotificationService extends NotificationListenerService {
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
         status = sbn.getId() + "";
-        if (HideNotificationService.isEnabled())
-            HideNotificationService.this.cancelAllNotifications();
+        if (HideNotificationsService.isEnabled())
+            HideNotificationsService.this.cancelAllNotifications();
     }
 
     @Override
