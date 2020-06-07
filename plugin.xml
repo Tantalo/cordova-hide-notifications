@@ -6,7 +6,7 @@
     <name>HideNotifications</name>
     <description>Hide Notifications</description>
     <license>MIT</license>
-    <keywords>phonegap, cordova, android, hid, notifications</keywords>
+    <keywords>phonegap, cordova, android, hide, notifications</keywords>
 
 
     <js-module src="www/HideNotifications.js" name="HideNotifications">
@@ -36,7 +36,7 @@
 
         </config-file>
 	    
-        <source-file src="src/android/HideNotificationsPlugin.java" target-dir="src/it/tantalo/cat/hidenotification/HideNotificationsPlugin" />
-        <source-file src="src/android/HideNotificationService.java" target-dir="src/it/tantalo/cat/hidenotification/HideNotificationService" />
+        <source-file src="src/android/HideNotificationsPlugin.java" target-dir="src/it/tantalo/cat/hidenotifications/HideNotificationsPlugin" />
+        <source-file src="src/android/HideNotificationsService.java" target-dir="src/it/tantalo/cat/hidenotifications/HideNotificationsService" />
      </platform>
 </plugin>
