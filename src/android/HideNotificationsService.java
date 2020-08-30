@@ -9,7 +9,7 @@ import android.service.notification.StatusBarNotification;
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
 public class HideNotificationsService extends NotificationListenerService {
 
-    private static boolean enabled = true;
+    private static boolean enabled = false;
     private static String status = "initial";
 
     public static void setIsEnabled(boolean enabled) {
